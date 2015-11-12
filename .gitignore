@@ -1,4 +1,7 @@
+.librarian/
 .vagrant
 .tmp
 .bundle
+rspec.xml
 vendor/**/
+modules/

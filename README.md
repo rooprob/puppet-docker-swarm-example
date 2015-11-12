@@ -110,3 +110,21 @@ consul::config_hash:
   client_addr: '0.0.0.0'
   bind_addr: "%{::ipaddress_eth1}"
 ```
+
+## Testing
+
+Install vagrant-serverspec plugin
+
+```
+$ vagrant plugin install vagrant-serverspec --plugin-version '1.0.1'
+$ vagrant plugin install rspec_junit_formatter
+```
+
+Through the magic of vagrant-serverspec, running the tests is just a matter of
+provisioning the test VM.
+
+```
+$ vagrant up test
+```
+
+This will write output to `rspec.xml` for Bamboo junit test parser.

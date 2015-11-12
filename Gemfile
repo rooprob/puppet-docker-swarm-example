@@ -1,5 +1,8 @@
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
-gem "librarian-puppet"
-gem "puppet"
-gem "serverspec"
+gem 'librarian-puppet'
+gem 'puppet'
+gem 'rake'
+gem 'serverspec'
+gem 'vagrant-wrapper'
+gem 'rspec_junit_formatter'

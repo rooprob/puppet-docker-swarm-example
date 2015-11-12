@@ -19,4 +19,6 @@ mod 'andschwa/unattended_upgrades'
 
 mod 'garethr/docker', :git => 'https://github.com/garethr/garethr-docker.git'
 
-mod 'KyleAnderson/consul'
+mod 'KyleAnderson/consul', :git => 'https://github.com/solarkennedy/puppet-consul.git'
+
+mod 'puppetlabs/concat', :git => 'https://github.com/puppetlabs/puppetlabs-concat.git'
