@@ -75,6 +75,45 @@ something like:
       └ Reserved CPUs: 0 / 1
       └ Reserved Memory: 0 B / 490 MiB
 
+## The Tour
+
+More features added to this project include
+
+* gliderlabs/registrator
+* dnsmasq
+* consul ui
+
+Quick recap on consul API - create
+
+    # docker run -d -p 8080:8080 --name="hello" mrbarker/python-flask-hello
+    # docker run -d -p 8081:8080 -p 8443:8443 --name="hello2" mrbarker/python-flask-hello
+    <id>
+
+    # docker logs registrator
+
+This demonstrates the automatic registration of services into consul. The
+following shows the registration and the subsequent DNS requests.
+
+    # curl localhost:8500/v1/catalog/services
+    {"consul":[],"python-flask-hello":[],"python-flask-hello-8080":[],"python-flask-hello-8443":[],"swarm":[]}
+
+    # curl localhost:8500/v1/catalog/nodes
+    [{"Node":"swarm-1","Address":"10.20.3.11"}]
+
+Check DNS by appending .service.consul to the service names,
+
+    # dig python-flask-hello-8443.service.consul +short
+    172.17.0.5
+    # dig python-flask-hello-8443.service.consul -t srv +short
+    1 1 8443 swarm-1.node.dc1.consul.
+    # dig python-flask-hello-8443.service.consul -t srv +short
+
+Reverse DNS - (XXX double check long vs short name returned)
+
+    # dig swarm-1.node.dc1.consul +short
+    10.20.3.11
+    # dig -x 10.20.3.11 +short
+    swarm-1.
 
 ## Implementation details
 

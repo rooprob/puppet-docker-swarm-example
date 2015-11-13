@@ -15,6 +15,7 @@ unattended_upgrades::autoremove: true
 docker::tcp_bind: tcp://0.0.0.0:2375
 docker::extra_parameters: "--cluster-store consul://%{::ipaddress_eth1}:8500 --cluster-advertise %{ipaddress_eth1}:0"
 consul::config_hash:
+  ui_dir: '/opt/consul/ui'
   data_dir: '/opt/consul'
   client_addr: '0.0.0.0'
   bind_addr: "%{::ipaddress_eth1}"

@@ -15,7 +15,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
     config.vm.define name do |instance|
       instance.vm.hostname = name
-      instance.vm.box = "ubuntu/trusty64"
+      instance.vm.box = "docker19/trusty64"
       instance.vm.provision :shell, :path => 'scripts/puppet.sh'
       instance.vm.provision :hosts
       instance.vm.provision :puppet do |puppet|

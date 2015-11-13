@@ -6,6 +6,7 @@ mod 'puppetlabs/apt'
 mod 'puppetlabs/git'
 mod 'puppetlabs/stdlib'
 
+mod 'saz/dnsmasq'
 mod 'saz/locales'
 mod 'saz/sudo'
 mod 'saz/limits'
