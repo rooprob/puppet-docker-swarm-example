@@ -2,6 +2,6 @@
 .vagrant
 .tmp
 .bundle
-rspec.xml
+rspec*.xml
 vendor/**/
 modules/

@@ -152,18 +152,16 @@ consul::config_hash:
 
 ## Testing
 
-Install vagrant-serverspec plugin
+Rake is wired up to test `swarm-*` servers with serverspec over SSH.
 
 ```
-$ vagrant plugin install vagrant-serverspec --plugin-version '1.0.1'
-$ vagrant plugin install rspec_junit_formatter
+bundle
 ```
 
-Through the magic of vagrant-serverspec, running the tests is just a matter of
-provisioning the test VM.
+Then run the test suite,
 
 ```
-$ vagrant up test
+bundle exec rake
 ```
 
-This will write output to `rspec.xml` for Bamboo junit test parser.
+This will write output to `rspec*.xml` for Bamboo/Jenkins junit test parsers.

@@ -20,6 +20,7 @@ namespace :spec do
     RSpec::Core::RakeTask.new(target.to_sym) do |t|
       ENV['TARGET_HOST'] = target
       t.pattern = "spec/#{target}/*_spec.rb"
+      t.rspec_opts = "-c -f d --format RspecJunitFormatter --out rspec-#{target}.xml"
     end
   end
 end
