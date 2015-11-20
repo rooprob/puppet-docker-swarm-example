@@ -4,7 +4,7 @@
 # Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
 VAGRANTFILE_API_VERSION = "2"
 
-$instances = (ENV['INSTANCES'] || 2).to_i
+$instances = (ENV['INSTANCES'] || 3).to_i
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
